@@ -7,3 +7,28 @@ document.addEventListener("DOMContentLoaded", function () {
     window.open(mapUrl, "_blank");
   });
 });
+
+ document.addEventListener("DOMContentLoaded", function () {
+  const fadeElements = document.querySelectorAll('.fade-in');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  function checkScroll() {
+    fadeElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add('show');
+      }
+    });
+
+    if (document.querySelector('#meus-cortes').classList.contains('show')) {
+      galleryItems.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.add('show');
+        }, index * 150); // Delay de 0.15s entre imagens
+      });
+    }
+  }
+
+  window.addEventListener('scroll', checkScroll);
+  checkScroll();
+});

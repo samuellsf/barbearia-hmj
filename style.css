@@ -42,17 +42,6 @@ h1 {
     color: gold;
     margin: 0;
 }
-.social-icon {
-    width: 50px;
-    height: 50px;
-    object-fit: cover; 
-    transition: transform 0.2s ease;
-    border-radius: 10px;
-}
-
-.social-icon:hover {
-    transform: scale(1.2);
-}
 
 
 h1 {
@@ -98,8 +87,12 @@ video {
     width: 100%;
     height: 150px;
     object-fit: cover;
-    border-radius: 4px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
 }
 
 /* Efeito flutuante no hover */
@@ -115,11 +108,22 @@ video {
     background-color: #1a1a1a;
     color: white;
 }
+#contato {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: #1a1a1a;
+}
 
 #contato a img {
     width: 50px;
     height: 50px;
     transition: transform 0.2s ease;
+}
+
+#contato a img:hover {
+    transform: scale(1.1);
 }
 
 #contato a img:hover {
@@ -154,6 +158,163 @@ video {
 #openMapBtn:hover {
     background-color: #e6c200;
 }
+#sobre-mim h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2.8em;
+  color: #b10303;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 3px rgba(177, 3, 3, 0.4);
+  font-style: italic; 
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+#sobre-mim {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 30px 25px;
+  background: #fff;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.06),
+    0 2px 6px rgba(177, 3, 3, 0.15);
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#sobre-mim:hover {
+  border-color: #b10303;
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.12),
+    0 4px 12px rgba(177, 3, 3, 0.3);
+}
+
+#sobre-mim h2 {
+  font-size: 2.4em;
+  color: #b10303;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(177, 3, 3, 0.3);
+}
+
+#sobre-mim p {
+  font-size: 1.15em;
+  line-height: 1.75;
+  margin-bottom: 20px;
+  color: #4a4a4a;
+  text-align: justify;
+  letter-spacing: 0.02em;
+}
+
+
+#meus-cortes {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#meus-cortes h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2.4em;
+  color: #b10303;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-shadow: 1px 1px 3px rgba(177, 3, 3, 0.4);
+  border-bottom: 3px solid #b10303;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+#meus-cortes .subtitulo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 1.5em;
+  color: #7a1a1a;
+  letter-spacing: 0.1em;
+  font-style: italic;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-shadow: 0 0 2px rgba(122, 26, 26, 0.3);
+}
+
+#cortes-sugeridos {
+  text-align: center;
+  margin-top: 60px;
+}
+
+#cortes-sugeridos h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2.4em;
+  color: #1976d2;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-shadow: 1px 1px 3px rgba(25, 118, 210, 0.4);
+  border-bottom: 3px solid #1976d2;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+
+#cortes-sugeridos .subtitulo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 1.5em;
+  color: #335f9a;
+  letter-spacing: 0.1em;
+  font-style: italic;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-shadow: 0 0 2px rgba(51, 95, 154, 0.3);
+}
+/* Mesma animação para as imagens */
+#cortes-sugeridos .gallery-item {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Efeito inicial oculto */
+.fade-in,
+.gallery-item {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Efeito visível */
+.show {
+  animation: fadeUp 0.8s forwards;
+}
+
+/* Animação */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Animação de entrada */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* Rodapé */
 footer {
